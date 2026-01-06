@@ -1,0 +1,71 @@
+---
+const skills = [
+  {
+    icon: '⚛️',
+    title: 'Frontend Development',
+    description: 'Interfaces modernas, responsivas y con excelente UX. Componentes reutilizables y código mantenible.',
+    tags: ['React', 'Next.js', 'React Native', 'Expo', 'TypeScript', 'Vite'],
+  },
+  {
+    icon: '🔧',
+    title: 'Backend Development',
+    description: 'APIs robustas, arquitecturas escalables y microservicios. Clean code y patrones de diseño.',
+    tags: ['Node.js', 'NestJS', 'Express', 'Spring Boot', 'PHP/Laravel', 'GraphQL'],
+  },
+  {
+    icon: '🗄️',
+    title: 'Databases & Storage',
+    description: 'Modelado de datos eficiente, optimización de queries y manejo de grandes volúmenes de información.',
+    tags: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'TypeORM', 'Prisma'],
+  },
+  {
+    icon: '☁️',
+    title: 'DevOps & Cloud',
+    description: 'Despliegues automatizados, contenedores y arquitecturas cloud-native.',
+    tags: ['AWS', 'GCP', 'Docker', 'ECS', 'S3', 'CI/CD'],
+  },
+  {
+    icon: '📱',
+    title: 'Mobile Development',
+    description: 'Apps nativas y cross-platform con experiencia de usuario fluida y rendimiento optimizado.',
+    tags: ['React Native', 'Expo', 'Android', 'iOS', 'Push Notifications'],
+  },
+  {
+    icon: '💳',
+    title: 'Payment Integration',
+    description: 'Integración de pasarelas de pago seguras y compliance con estándares de la industria.',
+    tags: ['Wompi', 'ePayco', 'MercadoPago', 'Sistecredito'],
+  },
+];
+---
+
+<section id="skills" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+  <div class="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <div class="font-mono text-sm text-accent-cyan uppercase tracking-[3px] mb-4">
+      // Especialidades
+    </div>
+    <h2 class="text-4xl lg:text-5xl font-bold">Stack Tecnológico</h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {skills.map((skill, i) => (
+      <div 
+        class="card reveal opacity-0 translate-y-8 transition-all duration-700"
+        style={`transition-delay: ${i * 100}ms`}
+      >
+        <div class="w-14 h-14 bg-gradient-accent rounded-2xl flex items-center justify-center text-2xl mb-6">
+          {skill.icon}
+        </div>
+        
+        <h3 class="text-xl font-semibold mb-3">{skill.title}</h3>
+        <p class="text-zinc-400 mb-6">{skill.description}</p>
+        
+        <div class="flex flex-wrap gap-2">
+          {skill.tags.map((tag) => (
+            <span class="skill-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

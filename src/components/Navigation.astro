@@ -1,0 +1,35 @@
+---
+const navLinks = [
+  { href: '#about', label: 'Sobre mí' },
+  { href: '#skills', label: 'Habilidades' },
+  { href: '#experience', label: 'Experiencia' },
+  { href: '#education', label: 'Educación' },
+  { href: '#contact', label: 'Contacto' },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 px-6 lg:px-12 py-4 flex justify-between items-center z-1000 backdrop-blur-xl bg-primary/80 border-b border-border transition-colors duration-300" id="navbar">
+  <a href="#" class="font-mono text-xl font-semibold text-accent-cyan flex items-center gap-2 no-underline">
+    <span class="text-zinc-500">&lt;</span>
+    Santiago.dev
+    <span class="text-zinc-500">/&gt;</span>
+  </a>
+
+  <ul class="hidden md:flex gap-10 list-none">
+    {navLinks.map((link) => (
+      <li>
+        <a 
+          href={link.href} 
+          class="text-zinc-400 no-underline font-medium text-sm transition-colors duration-300 hover:text-white relative group"
+        >
+          {link.label}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <a href="mailto:santiago.aruiz28@gmail.com" class="btn-primary text-sm">
+    Contáctame
+  </a>
+</nav>
