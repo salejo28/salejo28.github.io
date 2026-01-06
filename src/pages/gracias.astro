@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
+---
+
+<Layout title="¡Mensaje Enviado! | Santiago Ruiz">
+  <Navigation />
+  
+  <main class="min-h-screen flex items-center justify-center px-6 pt-24 pb-16">
+    <div class="text-center max-w-2xl mx-auto">
+      
+      <!-- Success Animation -->
+      <div class="relative mb-8">
+        <!-- Círculos animados de fondo -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-32 h-32 rounded-full bg-accent-cyan/20 animate-ping"></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-24 h-24 rounded-full bg-accent-cyan/30 animate-pulse"></div>
+        </div>
+        
+        <!-- Ícono de check -->
+        <div class="relative w-28 h-28 mx-auto bg-gradient-accent rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(0,212,170,0.4)]">
+          <svg 
+            class="w-14 h-14 text-primary animate-success-check" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="3" 
+              d="M5 13l4 4L19 7"
+              class="check-path"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mensaje principal -->
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4 animate-fade-in-up">
+        ¡Mensaje <span class="text-gradient">Enviado!</span>
+      </h1>
+      
+      <p class="text-xl text-zinc-400 mb-8 animate-fade-in-up" style="animation-delay: 100ms;">
+        Gracias por contactarme. He recibido tu mensaje y te responderé lo antes posible.
+      </p>
+
+      <!-- Info card -->
+      <div class="bg-primary-card border border-border rounded-2xl p-6 mb-8 animate-fade-in-up" style="animation-delay: 200ms;">
+        <div class="flex items-center justify-center gap-3 text-zinc-400">
+          <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>Tiempo de respuesta estimado: <strong class="text-white">24-48 horas</strong></span>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 300ms;">
+        <a 
+          href="/" 
+          class="btn-primary inline-flex items-center justify-center gap-2"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Volver al inicio
+        </a>
+        
+        <a 
+          href="https://linkedin.com/in/santiago-ruiz" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold border border-border text-white transition-all duration-300 hover:border-accent-cyan hover:bg-accent-cyan/5"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+
+      <!-- Confetti decoration -->
+      <div class="confetti-container">
+        <div class="confetti confetti-1">🎉</div>
+        <div class="confetti confetti-2">✨</div>
+        <div class="confetti confetti-3">🎊</div>
+        <div class="confetti confetti-4">⭐</div>
+        <div class="confetti confetti-5">💫</div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Check animation */
+  .check-path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawCheck 0.6s ease forwards 0.3s;
+  }
+
+  @keyframes drawCheck {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Confetti animations */
+  .confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .confetti {
+    position: absolute;
+    font-size: 2rem;
+    animation: confettiFall 4s ease-out forwards;
+    opacity: 0;
+  }
+
+  .confetti-1 {
+    left: 10%;
+    animation-delay: 0.2s;
+  }
+  .confetti-2 {
+    left: 30%;
+    animation-delay: 0.4s;
+  }
+  .confetti-3 {
+    left: 50%;
+    animation-delay: 0.1s;
+  }
+  .confetti-4 {
+    left: 70%;
+    animation-delay: 0.5s;
+  }
+  .confetti-5 {
+    left: 90%;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes confettiFall {
+    0% {
+      top: -10%;
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+      transform: rotate(720deg) scale(0.5);
+    }
+  }
+</style>
